@@ -53,6 +53,11 @@ function install_symfony_binary() {
     symfony version
 }
 
+function redis_install() {
+    apt install -y redis-server
+    redis-server --version
+}
+
 
 install_tools
 php_install
@@ -60,3 +65,4 @@ composer_install
 install_symfony_binary
 golang_install
 nvm_install
+redis_install
