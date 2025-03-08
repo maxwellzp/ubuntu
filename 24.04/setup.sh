@@ -2,6 +2,7 @@
 
 USER_BIN=~/bin
 PHP_VERSION="8.3"
+GOLANG_VERSION="1.24.1"
 
 apt update -y
 apt upgrade -y
@@ -36,8 +37,8 @@ function php_install() {
 }
 
 function golang_install() {
-    wget https://go.dev/dl/go1.24.0.linux-amd64.tar.gz
-    rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.0.linux-amd64.tar.gz
+    wget "https://go.dev/dl/go${GOLANG_VERSION}.linux-amd64.tar.gz"
+    rm -rf /usr/local/go && tar -C /usr/local -xzf go${GOLANG_VERSION}.linux-amd64.tar.gz
     echo "export PATH=\$PATH:/usr/local/go/bin" >> $HOME/.profile
     go version
 }
