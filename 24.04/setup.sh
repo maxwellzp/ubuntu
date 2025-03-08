@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USER_BIN=~/bin
+USER_BIN="~/bin"
 PHP_VERSION="8.3"
 GOLANG_VERSION="1.24.1"
 
@@ -75,6 +75,11 @@ function redis_install() {
     redis-server --version
 }
 
+function mariadb_install() {
+    apt install -y mariadb-server
+    mariadb --version
+}
+
 create_bin_directory
 install_tools
 install_git
@@ -84,3 +89,4 @@ install_symfony_binary
 golang_install
 nvm_install
 redis_install
+mariadb_install
