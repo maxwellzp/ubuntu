@@ -26,7 +26,11 @@ function golang_install() {
     go version
 }
 
+function nvm_install() {
+    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+}
+
 install_tools
 php_install
 golang_install
-
+nvm_install
