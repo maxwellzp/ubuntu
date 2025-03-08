@@ -1,8 +1,19 @@
 #!/bin/bash
 
+USER_BIN=~/bin
 
 apt update -y
 apt upgrade -y
+
+
+function create_bin_directory() {
+    if [[ -d "$USER_BIN" ]]; then
+        echo "$USER_BIN is exist"
+    else 
+        echo "$USER_BIN does not exist";
+        mkdir $USER_BIN
+    fi
+}
 
 
 function install_tools() {
@@ -58,7 +69,7 @@ function redis_install() {
     redis-server --version
 }
 
-
+create_bin_directory
 install_tools
 php_install
 composer_install
