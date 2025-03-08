@@ -80,6 +80,7 @@ function mariadb_install() {
     mariadb --version
 }
 
+echo "--START--: $(date)"
 create_bin_directory
 install_tools
 install_git
@@ -90,3 +91,4 @@ golang_install
 nvm_install
 redis_install
 mariadb_install
+echo "---END---: $(date)"
