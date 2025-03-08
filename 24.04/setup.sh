@@ -1,6 +1,7 @@
 #!/bin/bash
 
 USER_BIN=~/bin
+PHP_VERSION="8.3"
 
 apt update -y
 apt upgrade -y
@@ -25,8 +26,8 @@ function php_install() {
     apt install software-properties-common -y
     apt update -y
     add-apt-repository ppa:ondrej/php
-    apt install -y php8.3 php8.3-common php8.3-cli
-    apt install -y php8.3-{bz2,curl,mbstring,intl,xml,zip,xdebug,apcu,redis}
+    apt install -y php${PHP_VERSION} php${PHP_VERSION}-common php${PHP_VERSION}-cli
+    apt install -y php${PHP_VERSION}-{bz2,curl,mbstring,intl,xml,zip,xdebug,apcu,redis}
     php -v
 }
 
@@ -69,11 +70,11 @@ function redis_install() {
     redis-server --version
 }
 
-create_bin_directory
-install_tools
+# create_bin_directory
+# install_tools
 php_install
-composer_install
-install_symfony_binary
-golang_install
-nvm_install
-redis_install
+# composer_install
+# install_symfony_binary
+# golang_install
+# nvm_install
+# redis_install
