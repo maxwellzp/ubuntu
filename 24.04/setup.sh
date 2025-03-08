@@ -47,9 +47,16 @@ function composer_install() {
     mv composer.phar /usr/local/bin/composer
 }
 
+function install_symfony_binary() {
+    wget https://get.symfony.com/cli/installer -O - | bash
+    mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
+    symfony version
+}
+
 
 install_tools
 php_install
 composer_install
+install_symfony_binary
 golang_install
 nvm_install
