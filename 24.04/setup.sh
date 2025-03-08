@@ -16,10 +16,14 @@ function create_bin_directory() {
     fi
 }
 
-
 function install_tools() {
     apt install -y curl
     apt install -y wget
+}
+
+function install_git() {
+    apt install -y git
+    git --version
 }
 
 function php_install() {
@@ -70,11 +74,12 @@ function redis_install() {
     redis-server --version
 }
 
-# create_bin_directory
-# install_tools
+create_bin_directory
+install_tools
+install_git
 php_install
-# composer_install
-# install_symfony_binary
-# golang_install
-# nvm_install
-# redis_install
+composer_install
+install_symfony_binary
+golang_install
+nvm_install
+redis_install
