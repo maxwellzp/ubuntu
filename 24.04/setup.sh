@@ -34,6 +34,7 @@ function php_install() {
     apt install -y php${PHP_VERSION} php${PHP_VERSION}-common php${PHP_VERSION}-cli
     apt install -y php${PHP_VERSION}-{bz2,curl,mbstring,intl,xml,zip,xdebug,apcu,redis,pdo_mysql}
     php -v
+    php -m
 }
 
 function golang_install() {
