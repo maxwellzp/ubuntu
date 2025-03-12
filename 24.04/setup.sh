@@ -20,6 +20,7 @@ function create_bin_directory() {
 function install_tools() {
     apt install -y curl
     apt install -y wget
+    apt install -y cockpit # Graphical administration tool 
 }
 
 function install_git() {
